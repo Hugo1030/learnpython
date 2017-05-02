@@ -1,1 +1,1 @@
-# learnpython in hard way
+# learn python in hard way
