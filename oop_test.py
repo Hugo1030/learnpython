@@ -22,7 +22,7 @@ PHRASES = {
 
 # do they want to drill phrases first
 if len(sys.argv) == 2 and sys.argv[1] == "english":
-    PHRASE_FIRST = True
+    PHRASE_FIRST = True #PHRASE_FIRST是从哪里调用？
 else:
     PHRASE_FIRST = False
 
@@ -31,7 +31,7 @@ for word in urlopen(WORD_URL).readlines():
     WORDS.append(word.strip())
 
 
-def convert(snippet, phrase):
+def convert(snippet, phrase):#这段函数的意义不懂
     class_names = [w.capitalize() for w in
                    random.sample(WORDS, snippet.count("%%%"))]
     other_names = random.sample(WORDS, snippet.count("***"))
@@ -72,7 +72,7 @@ try:
             phrase = PHRASES[snippet]
             question, answer = convert(snippet, phrase)
             if PHRASE_FIRST:
-                question, answer = answer, question# QUESTION:
+                question, answer = answer, question
 
             print question
 
